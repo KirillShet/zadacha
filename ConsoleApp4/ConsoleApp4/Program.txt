@@ -1,0 +1,321 @@
+﻿Console.WriteLine("Введите размер цепочки ДНК (может быть не большле 1300)");
+int dlin = Convert.ToInt32(Console.ReadLine());
+Console.Clear();
+if (dlin >= 1300 && dlin < 0)
+{
+    Console.WriteLine("Вы ввели неправильное число. Возможно вы ввели что-то лишнее или вышли за границы заданного диапазона.");
+}
+Console.WriteLine("Введите первую цепочку ДНК (Цепочка должна состоять из букв A, C, G и T, также должна вводиться только одна буква!)");
+dlin = dlin + 2;
+int[] dnk = new int[dlin];
+string voic;
+int osh = 0;
+for (int a = 1; a < dlin - 1; a++)
+{
+    do
+    {
+        osh = 0;
+        voic = Console.ReadLine();
+        if (voic == "A")
+        {
+            dnk[a] = 1;
+        }
+        else if (voic == "C")
+        {
+            dnk[a] = 2;
+        }
+        else if (voic == "G")
+        {
+            dnk[a] = 3;
+        }
+        else if (voic == "T")
+        {
+            dnk[a] = 4;
+        }
+        else
+        {
+            Console.WriteLine("Вы ввели не ту букву.");
+            osh++;
+        }
+    }
+    while (osh == 1);
+}
+Console.WriteLine("Введите размер  цепочки ДНК (может быть не большле 1300)");
+int dlin1 = Convert.ToInt32(Console.ReadLine());
+Console.Clear();
+if (dlin1 >= 1300 && dlin1 < 0)
+{
+    Console.WriteLine("Вы ввели неправильное число. Возможно вы ввели что-то лишнее или вышли за границы заданного диапазона.");
+}
+Console.WriteLine("Введите первую цепочку ДНК (Цепочка должна состоять из букв A, C, G и T, также должна вводиться только одна буква!)");
+dlin1 = dlin1 + 2;
+int[] dnk2 = new int[dlin1];
+string voic2;
+int osh2 = 0;
+for (int s = 1; s < dlin1 - 1; s++)
+{
+    do
+    {
+        osh2 = 0;
+        voic2 = Console.ReadLine();
+        if (voic2 == "A")
+        {
+            dnk2[s] = 1;
+        }
+        else if (voic2 == "C")
+        {
+            dnk2[s] = 2;
+
+        }
+        else if (voic2 == "G")
+        {
+            dnk2[s] = 3;
+        }
+        else if (voic2 == "T")
+        {
+            dnk2[s] = 4;
+        }
+        else
+        {
+            Console.WriteLine("Вы ввели не ту букву.");
+            osh2++;
+        }
+    }
+    while (osh2 == 1);
+}
+Console.Clear();
+Console.WriteLine("Первая цепочка.");
+foreach (int d in dnk)
+{
+    if (d == 1)
+    {
+        Console.Write("A");
+    }
+    if (d == 2)
+    {
+        Console.Write("C");
+    }
+    if (d == 3)
+    {
+        Console.Write("G");
+    }
+    if (d == 4)
+    {
+        Console.Write("T");
+    }
+}
+Console.WriteLine();
+Console.WriteLine("Вторая цепочка");
+foreach (int d in dnk2)
+{
+    if (d == 1)
+    {
+        Console.Write("A");
+    }
+    if (d == 2)
+    {
+        Console.Write("C");
+    }
+    if (d == 3)
+    {
+        Console.Write("G");
+    }
+    if (d == 4)
+    {
+        Console.Write("T");
+    }
+}
+
+Console.WriteLine();
+
+
+int prov = 3;
+int prov1 = 3;
+int povt = 0;
+int prov2 = 3;
+int res = 2;
+int max = 0;
+int q = 1;
+int b = 1;
+double vich = 0;
+double sovpad = 0;
+int strok = 0;
+int osh1 = 0;
+if ((dlin == 1 && dlin1 == 1) || (dlin == 1 && dlin1 == 2) || (dlin == 2 && dlin1 == 1))
+{
+    Console.WriteLine("Нет анограмм");
+}
+else if (dlin == 2 && dlin1 == 2)
+{
+    if (dnk[1] == dnk2[1] && dnk[2] == dnk2[2])
+    {
+        Console.WriteLine("Нет анограмм");
+    }
+    else if (dnk[1] == dnk2[2] && dnk[2] == dnk2[1])
+    {
+        Console.WriteLine("Длинная анограммы: 2; 1 1");
+    }
+}
+else if (dlin > 2 && dlin1 > 2)
+{
+    do
+    {
+        if (dlin > dlin1)
+        {
+            max = 1;
+        }
+        if (dlin < dlin1)
+        {
+            max = 2;
+        }
+        int on = 0;
+        int dv = 0;
+        int tr = 0;
+        int ch = 0;
+        int on1 = 0;
+        int dv1 = 0;
+        int tr1 = 0;
+        int ch1 = 0;
+        strok = 0;
+        povt = 0;
+        for (int i = q; i < prov; i++)
+        {
+            if (dnk[i] == 1)
+            {
+                on++;
+            }
+            if (dnk[i] == 2)
+            {
+                dv++;
+            }
+            if (dnk[i] == 3)
+            {
+                tr++;
+            }
+            if (dnk[i] == 4)
+            {
+                ch++;
+            }
+        }
+        for (int i = b; i < prov2; i++)
+        {
+            if (dnk2[i] == 1)
+            {
+                on1++;
+            }
+            if (dnk2[i] == 2)
+            {
+                dv1++;
+            }
+            if (dnk2[i] == 3)
+            {
+                tr1++;
+            }
+            if (dnk2[i] == 4)
+            {
+                ch1++;
+            }
+        }
+        strok = prov - q;
+        if (strok == 2)
+        {
+            if ((on == on1 && dv == dv1 && on > 0 && on1 > 0 && dv > 0 && dv1 > 0) 
+                || (on == on1 && tr == tr1 && on > 0 && on1 > 0 && tr > 0 && tr1 > 0) 
+                || (on == on1 && ch == ch1 && on > 0 && on1 > 0 && ch > 0 && ch1 > 0) 
+                || (tr == tr1 && dv == dv1 && tr > 0 && tr1 > 0 && dv > 0 && dv1 > 0) 
+                || (ch == ch1 && dv == dv1 && ch > 0 && ch1 > 0 && dv > 0 && dv1 > 0) 
+                || (tr == tr1 && ch == ch1 && tr > 0 && tr1 > 0 && ch > 0 && ch1 > 0))
+            {
+                povt = povt + res;
+            }
+        }
+        else if (strok == 3)
+        {
+            if ((on == on1 && dv == dv1 && tr == tr1 && tr>0 && tr1 >0 && on > 0 && on1 > 0 && dv > 0 && dv1 > 0) 
+                || (on == on1 && tr == tr1 && ch == ch1 && ch > 0 && ch1 > 0 && on > 0 && on1 > 0 && tr > 0 && tr1 > 0) 
+                || (on == on1 && dv == dv1 && ch == ch1 && on > 0 && on1 > 0 && ch > 0 && ch1 > 0 && dv > 0 && dv1 > 0) 
+                || (tr == tr1 && dv == dv1 && ch == ch1 && tr > 0 && tr1 > 0 && dv > 0 && dv1 > 0 && ch > 0 && ch1 > 0) 
+                || (on == on1 && dv == dv1 && on > 0 && on1 > 0 && dv > 0 && dv1 > 0 && tr == 0 && tr1 == 0 && ch == 0 && ch1 == 0)
+                || (on == on1 && tr == tr1 && on > 0 && on1 > 0 && tr > 0 && tr1 > 0 && dv == 0 && dv1 == 0 && ch == 0 && ch1 == 0)
+                || (on == on1 && ch == ch1 && on > 0 && on1 > 0 && ch > 0 && ch1 > 0 && dv == 0 && dv1 == 0 && tr == 0 && tr1 == 0)
+                || (tr == tr1 && dv == dv1 && tr > 0 && tr1 > 0 && dv > 0 && dv1 > 0 && on == 0 && on1 == 0 && ch == 0 && ch1 == 0)
+                || (ch == ch1 && dv == dv1 && ch > 0 && ch1 > 0 && dv > 0 && dv1 > 0 && on == 0 && on1 == 0 && tr == 0 && tr1 == 0)
+                || (tr == tr1 && ch == ch1 && tr > 0 && tr1 > 0 && ch > 0 && ch1 > 0 && on == 0 && on1 == 0 && dv == 0 && dv1 == 0))
+            {
+                povt = povt + res;
+            }
+        }
+        else if (strok >= 4)
+        {
+            if ((on == on1 && dv == dv1 && tr == tr1 && ch == ch1 && tr > 0 && tr1 > 0 && on > 0 && on1 > 0 && dv > 0 && dv1 > 0 && ch > 0 && ch1 > 0)
+                || (on == on1 && dv == dv1 && tr == tr1 && tr > 0 && tr1 > 0 && on > 0 && on1 > 0 && dv > 0 && dv1 > 0 && ch == 0 && ch1 == 0)
+                || (on == on1 && tr == tr1 && ch == ch1 && ch > 0 && ch1 > 0 && on > 0 && on1 > 0 && tr > 0 && tr1 > 0 && dv == 0 && dv1 == 0)
+                || (on == on1 && dv == dv1 && ch == ch1 && on > 0 && on1 > 0 && ch > 0 && ch1 > 0 && dv > 0 && dv1 > 0 && tr == 0 && tr1 == 0)
+                || (tr == tr1 && dv == dv1 && ch == ch1 && tr > 0 && tr1 > 0 && dv > 0 && dv1 > 0 && ch > 0 && ch1 > 0 && on == 0 && on1 == 0)
+                || (on == on1 && dv == dv1 && on > 0 && on1 > 0 && dv > 0 && dv1 > 0 && tr == 0 && tr1 == 0 && ch == 0 && ch1 == 0)
+                || (on == on1 && tr == tr1 && on > 0 && on1 > 0 && tr > 0 && tr1 > 0 && dv == 0 && dv1 == 0 && ch == 0 && ch1 == 0)
+                || (on == on1 && ch == ch1 && on > 0 && on1 > 0 && ch > 0 && ch1 > 0 && dv == 0 && dv1 == 0 && tr == 0 && tr1 == 0)
+                || (tr == tr1 && dv == dv1 && tr > 0 && tr1 > 0 && dv > 0 && dv1 > 0 && on == 0 && on1 == 0 && ch == 0 && ch1 == 0)
+                || (ch == ch1 && dv == dv1 && ch > 0 && ch1 > 0 && dv > 0 && dv1 > 0 && on == 0 && on1 == 0 && tr == 0 && tr1 == 0)
+                || (tr == tr1 && ch == ch1 && tr > 0 && tr1 > 0 && ch > 0 && ch1 > 0 && on == 0 && on1 == 0 && dv == 0 && dv1 == 0))
+            {
+                povt = povt + res;
+            }
+        }
+        if (povt > 0)
+        {
+            Console.WriteLine($"{povt}, {q}, {b}");
+        }
+        q++;
+        prov++;
+        if (max == 1)
+        {
+            if (prov == dlin)
+            {
+                prov = prov1;
+                q = 1;
+                if (prov2 < dlin && prov2 < dlin1)
+                {
+                    b++;
+                    prov2++;
+                }
+            }
+            if (prov2 == dlin1)
+            {
+                prov = prov1;
+                prov2 = prov1;
+                prov1++;
+                res++;
+                q = 1;
+                b = 1;
+            }
+        }
+        if (max == 2)
+        {
+            if (prov == dlin1)
+            {
+                prov = prov1;
+                q = 1;
+                if (prov2 < dlin && prov2 < dlin1)
+                {
+                    b++;
+                    prov2++;
+                }
+            }
+            if (prov2 == dlin)
+            {
+                prov = prov1;
+                prov2 = prov1;
+                prov1++;
+                res++;
+                q = 1;
+                b = 1;
+            }
+        }
+        if (prov1 == dlin || prov1 == dlin1)
+        {
+            osh1++;
+        }
+    }
+    while (osh1 == 0);
+}
